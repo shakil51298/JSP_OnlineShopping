@@ -12,12 +12,13 @@ String pd_Price = request.getParameter("pd_Price");
 String active = request.getParameter("active");
 
 try {
-	String sql = " update products set p_name='" + pd_name + "',p_category='" + pd_category + "', price='" + pd_Price+ "',active='" + active + "'";
+	String sql = " update products set p_name='" + pd_name + "',p_category='" + pd_category + "', price='" + pd_Price+ "',active='" + active + "'where id='" + id + "'";
 	Connection con = SqlConnectionProvide.getcon();
 	Statement ps = con.createStatement(); // updating
 	ps.executeUpdate(sql);
-	response.sendRedirect("editProduct.jsp?msg=done");
+	response.sendRedirect("allProductEditProduct.jsp?msg=done");
 } catch (Exception e) {
 	System.out.print(e);
+	response.sendRedirect("allProductEditProduct.jsp?msg=done");
 }
 %>

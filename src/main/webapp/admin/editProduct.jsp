@@ -38,8 +38,9 @@
 	</h2>
 
 	<%
+	String  id_p = request.getParameter("id");
 	try {
-		String sql = "select * from products";
+		String sql = "select * from products where id = '"+id_p+"'";
 		Connection con = SqlConnectionProvide.getcon();
 		Statement st = con.createStatement();
 		ResultSet rs = st.executeQuery(sql);
@@ -52,6 +53,8 @@
 			String product_active = rs.getString(5);
 	%>
 	<form action="editProductsAction.jsp" method="post">
+		<input class="input-style" type="hidden" name="id"value="<%out.print(id);%>"> 
+		
 		<div class="left-div">
 			<h3>Enter Name</h3>
 			<input class="input-style" type="text" name="pd_name"
@@ -84,18 +87,19 @@
 			</select>
 			<hr>
 		</div>
-		<%
-		}
-		} catch (Exception e) {
 
-		System.out.println(e);
-		}
-		%>
 		<button class="button">
 			Edit <i class='far fa-arrow-alt-circle-right'></i>
 		</button>
 
 	</form>
+	<%
+	}
+	} catch (Exception e) {
+
+	System.out.println(e);
+	}
+	%>
 
 </body>
 <br>

@@ -33,7 +33,7 @@ h3 {
 	%>
 
 	<%
-	if ("done".equals(msg)) {
+	if ("wrong".equals(msg)) {
 	%>
 	<h3 class="alert">Some thing went wrong! Try again!</h3>
 
@@ -41,19 +41,7 @@ h3 {
 	}
 	%>
 
-	<%
-	try {
-		String sql = "select * from products";
-		Connection con = SqlConnectionProvide.getcon();
-		Statement st = con.createStatement();
-		ResultSet rs = st.executeQuery(sql);
-		while (rs.next()) {
-			int id = rs.getInt(1);
-			String product_name = rs.getString(2);
-			String product_category = rs.getString(3);
-			int product_price = rs.getInt(4);
-			String product_active = rs.getString(5);
-	%>
+
 
 	<table>
 		<thead>
@@ -67,7 +55,19 @@ h3 {
 			</tr>
 		</thead>
 		<tbody>
-
+			<%
+			try {
+				String sql = "select * from products";
+				Connection con = SqlConnectionProvide.getcon();
+				Statement st = con.createStatement();
+				ResultSet rs = st.executeQuery(sql);
+				while (rs.next()) {
+					int id = rs.getInt(1);
+					String product_name = rs.getString(2);
+					String product_category = rs.getString(3);
+					int product_price = rs.getInt(4);
+					String product_active = rs.getString(5);
+			%>
 			<tr>
 				<td>
 					<%
@@ -85,7 +85,7 @@ h3 {
 					%>
 				</td>
 				<td><i class="fa fa-cny"> <%
- 					out.println(product_price);
+ out.println(product_price);
  %>
 				</i></td>
 				<td>
@@ -93,9 +93,9 @@ h3 {
 					out.println(product_active);
 					%>
 				</td>
-				<td><a href="editProduct.jsp?id=<%
-					out.println(id);
-					%>">Edit <i class='fas fa-pen-fancy'></i></a></td>
+				<td><a href="editProduct.jsp?id=<%out.println(id);%>">Edit
+						<i class='fas fa-pen-fancy'></i>
+				</a></td>
 			</tr>
 			<%
 			}
