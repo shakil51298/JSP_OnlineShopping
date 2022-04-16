@@ -95,8 +95,5 @@ h3 {
 	<br>
 	<br>
 	<br>
-	
-	<a href="https://docs.google.com/forms/d/e/1FAIpQLSdwegE3h_0l5yEUa2nvGybX3gsnJoDlctx6cBMLFFzrAJXhxA/viewform?embedded=true">Form</a>
-
 </body>
 </html>

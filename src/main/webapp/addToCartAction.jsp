@@ -1,68 +1,63 @@
 <%@page import="com.connection.SqlConnectionProvide"%>
 <%@ page import="java.sql.*"%>
+<%@include file="header.jsp"%>
+<%@include file="footer.jsp"%>
 
 <%
-String email = session.getAttribute("email").toString();
-int p_id = Integer.parseInt(request.getParameter("id"));
-int quantity = 1;
-int price = 0;
-int total = 0;
-int cart_total = 0;
-
-
-int z = 0;
-try {
-
-	String sql = "select * from products where id = '" + p_id + "'";
-
-	Connection con = SqlConnectionProvide.getcon();
-	Statement st = con.createStatement();
-	ResultSet rs = st.executeQuery(sql);
-	 while (rs.next()) {
-		price = rs.getInt(4);
-		total = price;
-		System.out.print(total);
-		
-	} 
-	 String sql2 = "select * from cart where p_id = '" + p_id + "' and email='"+email+"' and address is NULL";
-		ResultSet rs2 = st.executeQuery(sql2);
-		while(rs2.next()){
-			cart_total = rs2.getInt(5);
-			cart_total = cart_total + total ; 
-			quantity = rs2.getInt(3);
-			quantity = quantity + 1 ; 
-			z = 1 ;
-			
-			
+	String emaiString = session.getAttribute("email").toString() ;
+	String product_id = request.getParameter("id");
+	int idInt = Integer.parseInt(product_id); 
+	int quantity = 1 ;
+	int product_price = 0;
+	int product_total = 0 ;
+	int cart_total = 0 ;
+	
+	int z = 0 ; 
+	try{
+		Connection con = SqlConnectionProvide.getcon() ;
+		Statement st = con.createStatement();
+		ResultSet rs = st.executeQuery("select * from products where id ='"+product_id+"'");
+		while(rs.next()){
+			product_price = rs.getInt(4);
+			product_total = product_price ; 
+			out.println(product_total);
 		}
-	
-	if(z == 0){
-		PreparedStatement prd = con.prepareStatement("insert into cart(email , p_id , quantity, price , total) values(? , ? , ? , ? , ?)");
-		prd.setString(1, email);
-		prd.setInt(2, p_id);
-		prd.setInt(3, quantity);
-		prd.setInt(4, price);
-		prd.setInt(5, total);
-		prd.executeUpdate();
+		ResultSet rs1 = st.executeQuery("select * from cart where p_id ='"+product_id+"' and email='"+emaiString+"' and address is NULL");
+		while(rs1.next()){
+			cart_total= rs1.getInt(5);
+			cart_total = cart_total + product_total ; 
+			quantity = rs1.getInt(3);
+			quantity = quantity + 1 ;
+			z = 1 ; 
+		}
+		if(z == 1){
+			st.executeUpdate("update cart set total= '"+cart_total+"', quantity='"+quantity+"' where p_id = '"+product_id+"' and email = '"+emaiString+"' and address is NULL") ;
+			response.sendRedirect("home.jsp?msg=exist");
+		}
+		if(z == 0 ){
+			PreparedStatement ps = con.prepareStatement("insert into cart (email , p_id, quantity, price, total) values(?,?,?,?,?)");
+			ps.setString(1 , emaiString);
+			ps.setInt(2 , idInt);
+			ps.setInt(3 , quantity);
+			ps.setInt(4 , product_price);
+			ps.setInt(5 , product_total); 
+			ps.executeUpdate();
+			response.sendRedirect("home.jsp?msg=added");
+		}
+		
+	}
+	catch(Exception e){
+		System.out.println(e);
 		response.sendRedirect("home.jsp?msg=added");
-		
-		
 	}
 	
-	if(z == 1){
-		String sql3 = "update cart set total = '"+cart_total+"', quantity = '"+quantity+"' , where p_id = '"+p_id+"' and email = '"+email+"' and address in NULL'" ; 
-		st.executeUpdate(sql3) ;
-		response.sendRedirect("home.jsp?msg=exist") ;
-	}
 	
-} catch (Exception e) {
-	//response.sendRedirect("home.jsp?msg=invalid");
-	System.out.println(e);
-}
-
-
+	
+	
+	out.println("this is shakil" + emaiString + product_id);
 %>
 
-
-
+<!-- 
+address, city, state, country, mobileNumber, orderDate, deliveryDate, paymentMethod	, t_Id, status
+ -->
 
