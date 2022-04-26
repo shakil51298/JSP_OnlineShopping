@@ -21,26 +21,26 @@ try{
 		total = rs.getInt(5);
 		quantity = rs.getInt(3);	
 	}
-	if(quantity == 1){
+	if(quantity == 1 && incdec.equals("dec")){
 		response.sendRedirect("myCart.jsp?msg=notPossible");
 	}
 	else if(quantity !=1 && incdec.equals("dec")){
 		total = total - price ;
-		quantity = quantity - 1 ;
-		st.executeUpdate("update cart set total = '"+total+"', quantity= '"+quantity+"', where email = '"+email+"', p_id='"+id+"' and address in NULL");
+		quantity = quantity -1 ;
+		st.execute("update cart set total = '"+total+"', quantity='"+quantity+"' where email='"+email+"' and p_id='"+id+"' and address is NULL");
 		response.sendRedirect("myCart.jsp?msg=dec");
 	}
 	else{
 		total = total + price ;
 		quantity = quantity + 1 ;
-		st.executeUpdate("update cart set total = '"+total+"', quantity= '"+quantity+"', where email = '"+email+"', p_id='"+id+"' and address in NULL");
+		st.execute("update cart set total = '"+total+"', quantity='"+quantity+"' where email='"+email+"' and p_id='"+id+"' and address is NULL");
 		response.sendRedirect("myCart.jsp?msg=inc");
 	}
-	
 }
 catch(Exception e){
 	System.out.println(e);
 }
+
 
 
 %>

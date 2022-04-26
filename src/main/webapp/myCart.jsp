@@ -19,8 +19,11 @@ h3 {
 	<div style="color: white; text-align: center; font-size: 30px;">
 		My Cart <i class='fas fa-cart-arrow-down'></i>
 	</div>
+	
 	<%
-	if ("notPossinle".equals("msg")) {
+	String msg= request.getParameter("msg") ;
+	
+	if ("notPossible".equals(msg)) {
 	%>
 	<h3 class="alert">There is only one Quantity! So click on remove!</h3>
 
@@ -29,7 +32,7 @@ h3 {
 	%>
 
 	<%
-	if ("inc".equals("msg")) {
+	if ("inc".equals(msg)) {
 	%>
 	<h3 class="alert">Quantity Increased Successfully!</h3>
 	<%
@@ -37,14 +40,14 @@ h3 {
 	%>
 
 	<%
-	if ("dec".equals("msg")) {
+	if ("dec".equals(msg)) {
 	%>
 	<h3 class="alert">Quantity Decreased Successfully!</h3>
 	<%
 	}
 	%>
 	<%
-	if ("rem".equals("msg")) {
+	if ("removed".equals(msg)) {
 	%>
 	<h3 class="alert">Product Successfully Removed!</h3>
 	<%
@@ -108,7 +111,7 @@ h3 {
 				<td>
 				<a href="incDscQuantityAction.jsp?id=<%=rs.getString(1) %>&quantity=inc"><i class='fas fa-plus-circle'></i></a> 
 					<%=rs.getString(8) %>
-				<a href="incDscQuantityAction.jsp?id=<%=rs.getString(1) %>&quantity=dsc"><i class='fas fa-minus-circle'></i></a></td>
+				<a href="incDscQuantityAction.jsp?id=<%=rs.getString(1) %>&quantity=dec"><i class='fas fa-minus-circle'></i></a></td>
 				<td>
 				<i class="fa fa-cny"> <%=rs.getString(10) %></i>
 				</td>
