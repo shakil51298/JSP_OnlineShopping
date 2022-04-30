@@ -35,8 +35,6 @@ String country = "" ;
 		st.executeUpdate() ; 
 		response.sendRedirect("signup.jsp?msg=valid");
 		
-		
-		
 	}
 	catch(Exception e){
 		System.out.print(e);
