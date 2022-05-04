@@ -19,13 +19,14 @@
 		while(rs.next()){
 			total = rs.getInt(1);
 			
-		}
-		ResultSet rs2 = st.executeQuery("select * from user_info inner join cart where cart.email='"+email+"' and cart.status='bill'");
-		while(rs2.next()){
 			
+		}
+		ResultSet rs2 = st.executeQuery("select * from user_info inner join cart on cart.email='"+email+"' and cart.status='bill'");
+		while(rs2.next()){
+			 
 		
 %>
-<h3>Online shopping Bill (BTech Days)</h3>
+<h3>Online shopping Bill </h3>
 <hr>
 <div class="left-div"><h3>Name: <%=rs2.getString(1) %> </h3></div>
 <div class="right-div-right"><h3>Email:<% out.println(email); %>  </h3></div>
@@ -58,7 +59,7 @@
      <th>Sub Total</th>
   </tr>
   <%
-  	ResultSet rs1 = st.executeQuery("select * from cart inner join products where cart.p_id=products.id and cart.email = '"+email+"' and cart.status='bill'");
+  	ResultSet rs1 = st.executeQuery("select * from cart inner join products where cart.p_id = products.id and cart.email = '"+email+"' and cart.status='bill'");
   	while(rs1.next()){
   		sno = sno + 1 ;
   %>

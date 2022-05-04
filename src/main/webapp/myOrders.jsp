@@ -1,7 +1,13 @@
+<%@page import="java.sql.*"%>
+<%@page import="com.connection.SqlConnectionProvide"%>
+<%@include file="header.jsp" %>
+<%@include file="footer.jsp"%>
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" conte nt="text/html; charset=ISO-8859-1">
 <title>Home</title>
 </head>
 <body>
@@ -24,20 +30,47 @@
         </thead>
         <tbody>
 
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td><i class="fa fa-inr"></i> </td>
-            <td></td>
-            <td><i class="fa fa-inr"></i> </td>
-             <td></td>
-              <td></td>
-               <td></td>
-               <td></td>
+<%
+int sno = 0 ; 
+String emailid = session.getAttribute("email").toString() ; 
+
+try{
+	Connection con = SqlConnectionProvide.getcon();
+	Statement st = con.createStatement();
+	String sql = "select * from cart inner join products where cart.p_id = products.id and cart.email = '"+emailid+"' and cart.orderDate is not NULL";
+	ResultSet rs = st.executeQuery(sql);
+	while(rs.next()){
+		sno = sno + 1 ;
+		
+
+
+
+%>
+
+			<tr>
+            <td><%out.print(sno); %></td>
+            <td><%=rs.getString(17) %></td>
+            <td><i class="fa fa-inr"></i> <%=rs.getString(18) %></td>
+            <td><i class="fa fa-inr"></i><%=rs.getString(19) %></td>
+             <td><%=rs.getString(3) %></td>
+              <td><%=rs.getString(5) %></td>
+               <td><%=rs.getString(11) %></td>
+               <td><%=rs.getString(12) %></td>
+               <td><%=rs.getString(13) %></td>
+               <td><%=rs.getString(15) %></td>
             </tr>
          
         </tbody>
+        
+        <%
+        
+        
+        	}
+}
+catch(Exception e){
+	System.out.println(e);
+}
+        %>
       </table>
       <br>
       <br>

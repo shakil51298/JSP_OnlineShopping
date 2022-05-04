@@ -17,7 +17,7 @@ String status = "bill";
 
 try{
 	Connection conn = SqlConnectionProvide.getcon();
-	PreparedStatement pd = conn.prepareStatement("update user_info set address = ?,state=?,city=?,country=?,mobile_number=?");
+	PreparedStatement pd = conn.prepareStatement("update user_info set address = ?,state=?,city=?,country=?,mobile_number=? where email='"+email+"'");
 	pd.setString(1, address);
 	pd.setString(2, city);
 	pd.setString(3, state);
