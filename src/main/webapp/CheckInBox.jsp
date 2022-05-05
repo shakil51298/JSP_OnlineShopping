@@ -26,6 +26,7 @@ if ("wrong".equals(msg)) {
 	<thead>
 		<tr>
 			<th scope="col">S.No</th>
+			<th scope="col">EMAIL</th>
 			<th scope="col">Date/time</th>
 			<th scope="col">Subejct</th>
 			<th scope="col">Message</th>
@@ -49,10 +50,13 @@ if ("wrong".equals(msg)) {
 			<td>
 				<%out.println(sno);%>
 			</td>
-			<td><%=rs.getString(5)%></td>
+			<td><%=rs.getString(6)%></td>
 			<td><%=rs.getString(3)%></td>
 			<td><%=rs.getString(4)%></td>
 			<td><a href="inboxMsgDeleteaction.jsp?id=<%out.println(mid);%>">Delete</a>
+			<td>
+			 <a href="messageUs.jsp" >Reply</a>
+			</td>
 			</td>
 		</tr>
 

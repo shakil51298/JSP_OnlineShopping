@@ -1,12 +1,23 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+<%@page import="java.sql.*"%>
+<%@page import="com.connection.SqlConnectionProvide"%>
 
-</body>
-</html>
+
+<%
+String email = session.getAttribute("email").toString() ; 
+String id = request.getParameter("id");
+String status = "delivered";
+
+try{
+	Connection conn = SqlConnectionProvide.getcon();
+	Statement st = conn.createStatement();
+	st.executeUpdate("update cart set status = '"+status+"' where p_id = '"+id+"' and address is not NULL");
+	response.sendRedirect("ordersReceived.jsp?msg=delivered ");
+}
+catch(Exception e){
+	System.out.println(e);
+	response.sendRedirect("ordersReceived.jsp?msg=wrong");
+}
+
+
+
+%>

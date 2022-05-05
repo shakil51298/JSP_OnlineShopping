@@ -19,6 +19,7 @@ h3 {
 	<div style="color: white; text-align: center; font-size: 30px;">
 		Messages Received <i class='fas fa-comment-alt'></i>
 	</div>
+	<hr>
 	<table>
 		<thead>
 			<tr>
@@ -27,6 +28,7 @@ h3 {
 				<th scope="col">Subject</th>
 				<th scope="col">Body</th>
 				<th scope="col">DATE</th>
+				<th scope="col">Status</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -42,11 +44,18 @@ h3 {
 					/* mid = rs.getString(1); */
 			%>
 			<tr>
-				<td><%out.println(sno);%></td>
+				<td>
+					<%out.println(sno);%>
+				</td>
 				<td><%=rs.getString(2)%></td>
 				<td><%=rs.getString(3)%></td>
 				<td><%=rs.getString(4)%></td>
 				<td><%=rs.getString(5)%></td>
+				<td>
+					<a href="customersMessageReply.jsp?u_email=<%=rs.getString(2)%>"> Reply to Customers
+							<i class='fas fa-comment-alt'></i>
+					</a>
+				</td>
 			</tr>
 			<%
 			}

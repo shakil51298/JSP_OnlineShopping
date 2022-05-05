@@ -25,9 +25,9 @@
 	<%
 	}
 
-	if ("updated".equals(msg)) {
+	if ("delivered".equals(msg)) {
 	%>
-	<h3 class="alert">Successfully Updated!</h3>
+	<h3 class="alert">Delivered!</h3>
 	<%
 	}
 	if ("wrong".equals(msg)) {
@@ -79,10 +79,10 @@
 			<td style="word-wrap: break-word;"><%=rs.getString(14)%></td>
 			<td style="word-wrap: break-word;"><%=rs.getString(15)%></td>
 			<td style="word-wrap: break-word;"><a
-				href="cancelOrdeAction.jsp?id=<%=rs.getString(2)%>&<%=rs.getString(1)%>">Cancel
+				href="cancelOrderAction.jsp?id=<%=rs.getString(2)%>&<%=rs.getString(1)%>">Cancel
 					<i class='fas fa-window-close'></i>
 			</a></td>
-			<td><a href="DeliveredOrdeAction.jsp">Delivered <i
+			<td><a href="DeliveredOrdeAction.jsp?id=<%=rs.getString(2)%>&<%=rs.getString(1)%>"">Delivered <i
 					class='fas fa-dolly'></i></i></a></td>
 		</tr>
 		<%

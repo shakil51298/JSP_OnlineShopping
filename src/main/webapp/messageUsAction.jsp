@@ -9,7 +9,7 @@ String M_body = request.getParameter("body") ;
 
 try{
 	Connection conn = SqlConnectionProvide.getcon();
-	String sql = "insert into user_messages(email, subject, body, date_time) values(?, ?, ?, NOW())";
+	String sql = "insert into user_messages(email, subject, body, date_time, from_email) values(?, ?, ?, NOW(), '')";
 	PreparedStatement ps1 = conn.prepareStatement(sql);
 	ps1.setString(1, email);
 	ps1.setString(2, Subject);
