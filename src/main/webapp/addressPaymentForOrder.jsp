@@ -7,7 +7,7 @@
 <head>
 <link rel="stylesheet" href="css/addressPaymentForOrder-style.css">
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-<title>Home</title>
+<title>Check Out -urshop22</title>
 <script>
 	if(window.history.forward(1) != null)
 		window.history.forward(1);

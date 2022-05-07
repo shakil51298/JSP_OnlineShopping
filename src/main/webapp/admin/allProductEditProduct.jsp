@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Home</title>
+<title>All Products -urshop22</title>
 <style>
 h3 {
 	color: yellow;
@@ -18,7 +18,8 @@ h3 {
 </style>
 </head>
 <body>
-	<div style="color: white; text-align: center; font-size: 30px;">
+	<div
+		style="color: white; text-align: center; font-size: 30px; text-transform: uppercase;">
 		All Products & Edit Products <i class='fab fa-elementor'></i>
 	</div>
 
@@ -74,27 +75,28 @@ h3 {
 					out.println(id);
 					%>
 				</td>
-				<td>
+				<td style="word-wrap: break-word;">
 					<%
 					out.println(product_name);
 					%>
 				</td>
-				<td>
+				<td style="word-wrap: break-word;">
 					<%
 					out.println(product_category);
 					%>
 				</td>
-				<td><i class="fa fa-cny"> <%
+				<td style="word-wrap: break-word;"><i class="fa fa-cny"> <%
  out.println(product_price);
  %>
 				</i></td>
-				<td>
+				<td style="word-wrap: break-word;">
 					<%
 					out.println(product_active);
 					%>
 				</td>
-				<td><a href="editProduct.jsp?id=<%out.println(id);%>">Edit
-						<i class='fas fa-pen-fancy'></i>
+				<td style="word-wrap: break-word;"><a
+					href="editProduct.jsp?id=<%out.println(id);%>">Edit <i
+						class='fas fa-pen-fancy'></i>
 				</a></td>
 			</tr>
 			<%

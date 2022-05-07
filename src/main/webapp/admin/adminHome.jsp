@@ -1,18 +1,21 @@
-<%@include file="adminHeader.jsp" %>
-<%@include file="../footer.jsp" %>
+<%@include file="adminHeader.jsp"%>
+<%@include file="../footer.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>welcome</title>
+<title>Admin Home -urshop22</title>
 <style>
-h1 {
+h3 {
 	color: white;
 	text-align: center;
-	font-size: 100px;
+	font-size: 50px;
 }
 </style>
 </head>
 <body>
-	<h1>welcome admin!</h1>
+	<div class="container mt-5">
+		<h3 style="text-transform: uppercase">welcome to admin!
+			yourshop22 admin panel.</h3>
+	</div>
 </body>
 </html>

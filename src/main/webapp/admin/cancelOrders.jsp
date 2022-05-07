@@ -9,7 +9,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="../css/ordersReceived-style.css">
-<title>Home</title>
+<title>Cancel Orders -urshop22</title>
 <style>
 .th-style {
 	width: 25%;
@@ -17,7 +17,7 @@
 </style>
 </head>
 <body>
-	<div style="color: white; text-align: center; font-size: 30px;">
+	<div style="color: white; text-align: center; font-size: 30px; text-transform: uppercase;">
 		Cancel Orders <i class='fas fa-window-close'></i>
 	</div>
 	<%
@@ -40,8 +40,8 @@
 %>
 
 	<table id="customers">
-		<tr>
-			<th>Mobile Number</th>
+		<tr style="word-wrap: break-word;">
+			<th >Mobile Number</th>
 			<th scope="col">Product Name</th>
 			<th scope="col">Quantity</th>
 			<th scope="col"><i class="fa fa-inr"></i> Sub Total</th>

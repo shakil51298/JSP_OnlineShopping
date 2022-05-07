@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>My Cart</title>
+<title>My Cart -urshop22</title>
 <style>
 h3 {
 	color: yellow;

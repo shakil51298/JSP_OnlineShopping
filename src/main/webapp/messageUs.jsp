@@ -7,7 +7,7 @@
 <head>
 <link rel="stylesheet" href="css/messageUs.css">
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-<title>Message Us</title>
+<title>Message Us -urshop22</title>
 </head>
 <body>
 	<div style="color: white; text-align: center; font-size: 30px;">
@@ -16,7 +16,7 @@
 	<hr>
 	<div style="color: white; text-align: center; font-size: 20px;">
 		<a href ="CheckSentBox.jsp">
-			CHECK Sent BOX <i class='fas fa-comment-alt'></i>
+			CHECK SENT BOX <i class='fas fa-comment-alt'></i>
 		</a>
 		<hr>
 		<a href ="CheckInBox.jsp">

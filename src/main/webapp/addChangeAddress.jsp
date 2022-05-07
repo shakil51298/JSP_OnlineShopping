@@ -7,7 +7,7 @@
 <head>
 <link rel="stylesheet" href="css/changeDetails.css">
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-<title>Message Us</title>
+<title>Add or Change Address -urshop22</title>
 </head>
 <body>
 	<%

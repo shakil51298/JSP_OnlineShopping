@@ -10,13 +10,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Sent Box</title>
+<title>Sent Box -urshop22</title>
 </head>
 <body>
 
 
 	<div style="color: white; text-align: center; font-size: 30px;">
-		Cehck Sent Box</div>
+		SENT BOX</div>
 	<hr>
 	<%
 	String msg = request.getParameter("msg");
@@ -64,8 +64,9 @@
 				<td><%=rs.getString(5)%></td>
 				<td><%=rs.getString(3)%></td>
 				<td><%=rs.getString(4)%></td>
-				<td><a href="deleteInboxMsg.jsp?id=<%out.println(mid);%>">Delete</a>
-				</td>
+				<td><a href="deleteInboxMsg.jsp?id=<%out.println(mid);%>">
+						<i class="fa fa-trash" aria-hidden="true"></i>
+				</a></td>
 			</tr>
 
 		</tbody>

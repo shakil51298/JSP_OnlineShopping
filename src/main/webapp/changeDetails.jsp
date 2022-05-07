@@ -8,7 +8,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="css/changeDetails.css">
-<title>Change Details</title>
+<title>Change Details -ushop22</title>
 <style>
 hr {
 	width: 70%;

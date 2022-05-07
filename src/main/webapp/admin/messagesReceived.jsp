@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Home</title>
+<title>Messages Received -urshop22</title>
 <style>
 h3 {
 	color: yellow;
@@ -16,7 +16,8 @@ h3 {
 </style>
 </head>
 <body>
-	<div style="color: white; text-align: center; font-size: 30px;">
+	<div
+		style="color: white; text-align: center; font-size: 30px; text-transform: uppercase;">
 		Messages Received <i class='fas fa-comment-alt'></i>
 	</div>
 	<hr>
@@ -47,15 +48,14 @@ h3 {
 				<td>
 					<%out.println(sno);%>
 				</td>
-				<td><%=rs.getString(2)%></td>
-				<td><%=rs.getString(3)%></td>
-				<td><%=rs.getString(4)%></td>
-				<td><%=rs.getString(5)%></td>
-				<td>
-					<a href="customersMessageReply.jsp?u_email=<%=rs.getString(2)%>"> Reply to Customers
-							<i class='fas fa-comment-alt'></i>
-					</a>
-				</td>
+				<td style="word-wrap: break-word;"><%=rs.getString(2)%></td>
+				<td style="word-wrap: break-word;"><%=rs.getString(3)%></td>
+				<td style="word-wrap: break-word;"><%=rs.getString(4)%></td>
+				<td style="word-wrap: break-word;"><%=rs.getString(5)%></td>
+				<td style="word-wrap: break-word;"><a
+					href="customersMessageReply.jsp?u_email=<%=rs.getString(2)%>">
+						Reply to Customers <i class='fas fa-comment-alt'></i>
+				</a></td>
 			</tr>
 			<%
 			}

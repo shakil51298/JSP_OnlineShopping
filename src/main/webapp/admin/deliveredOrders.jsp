@@ -6,7 +6,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="../css/ordersReceived-style.css">
-<title>Home</title>
+<title>Delivered Orders -urshop22</title>
 <style>
 .th-style {
 	width: 25%;
@@ -14,12 +14,12 @@
 </style>
 </head>
 <body>
-	<div style="color: white; text-align: center; font-size: 30px;">
+	<div style="color: white; text-align: center; font-size: 30px; text-transform: uppercase;">
 		Delivered Orders <i class='fas fa-dolly'></i>
 	</div>
 
 	<table id="customers">
-		<tr>
+		<tr style="word-wrap: break-word;">
 			<th>Mobile Number</th>
 			<th scope="col">Product Name</th>
 			<th scope="col">Quantity</th>

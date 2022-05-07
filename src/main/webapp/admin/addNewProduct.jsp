@@ -8,7 +8,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="../css/addNewProduct-style.css">
-<title>Add New Product</title>
+<title>Add New Product -urshop22</title>
 </head>
 <body>
 	<%

@@ -6,7 +6,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="../css/ordersReceived-style.css">
-<title>Order Received</title>
+<title>Order Received -urshop22</title>
 <style>
 .th-style {
 	width: 25%;
@@ -14,7 +14,7 @@
 </style>
 </head>
 <body>
-	<div style="color: white; text-align: center; font-size: 30px;">
+	<div style="color: white; text-align: center; font-size: 30px; text-transform: uppercase;">
 		Orders Received <i class="fas fa-archive"></i>
 	</div>
 	<%
