@@ -79,7 +79,7 @@ h3 {
 				<td><%out.print(id); %></td>
 				<td><%out.print(pName); %></td>
 				<td><%out.print(pCategory); %></td>
-				<td><%out.print(pPrice); %><i class="fa fa-inr"></i> </i></td>
+				<td><%out.print(pPrice); %> <i class="fa fa-cny"> </i> </i></td>
 				<td><a href="addToCartAction.jsp?id=<%out.print(id); %>">Add to cart <i class='fas fa-cart-plus'></i></a></td>
 			</tr>
 
