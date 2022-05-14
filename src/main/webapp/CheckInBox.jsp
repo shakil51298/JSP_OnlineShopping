@@ -8,9 +8,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Sent Box -urshop22</title>
+<style type="text/css"> 
+
+        
+} 
+</style>
 <body>
-	<div style="color: white; text-align: center; font-size: 30px;">
-		INBOX</div>
+
+	<div class="notification" style="color: white; text-align: center; font-size: 30px;">
+				<span>INBOX</span>
+	</div>
 	<hr>
 	<%
 	String msg = request.getParameter("msg");
