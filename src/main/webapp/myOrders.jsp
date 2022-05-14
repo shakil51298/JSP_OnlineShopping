@@ -53,8 +53,8 @@
 					%>
 				</td>
 				<td ><%=rs.getString(17)%></td>
-				<td style="word-wrap: break-word;"><i class="fa fa-inr"></i> <%=rs.getString(18)%></td>
-				<td style="word-wrap: break-word;"><i class="fa fa-inr"></i><%=rs.getString(19)%></td>
+				<td style="word-wrap: break-word;"><i class="fa fa-cny"> </i> <%=rs.getString(18)%></td>
+				<td style="word-wrap: break-word;"><i class="fa fa-cny"> </i><%=rs.getString(19)%></td>
 				<td style="word-wrap: break-word;"><%=rs.getString(3)%></td>
 				<td style="word-wrap: break-word;"><%=rs.getString(5)%></td>
 				<td style="word-wrap: break-word;"><%=rs.getString(11)%></td>
