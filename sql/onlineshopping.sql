@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 14, 2022 at 10:48 AM
+-- Generation Time: May 03, 2022 at 11:56 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -50,8 +50,18 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`email`, `p_id`, `quantity`, `price`, `total`, `address`, `city`, `state`, `country`, `mobileNumber`, `orderDate`, `deliveryDate`, `paymentMethod`, `t_Id`, `status`) VALUES
-('shakil@gmail.com', 4, 2, 9000, 18000, 'dhaka', 'bangladesh', 'faridpur', 'bangladesh', '568789798', '2022-05-14 16:44:44', '2022-05-17 16:44:44.000000', 'PayPal', 'paypal12345', 'processing'),
-('shakil@gmail.com', 3, 2, 9000, 18000, 'dhaka', 'bangladesh', 'faridpur', 'bangladesh', '568789798', '2022-05-14 16:44:44', '2022-05-17 16:44:44.000000', 'PayPal', 'paypal12345', 'processing');
+('luokainwwn2@gmail.com', 2, 1, 1500, 1500, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('luokainwwn2@gmail.com', 4, 1, 9000, 9000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('zohra@gmail.com', 1, 1, 300, 300, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('zikaiwen01@gmail.com', 4, 2, 9000, 18000, 'dhaka,bangladesh', 'faridpur', 'Alaska', 'United States', '185679099083', '2022-05-01 05:17:20', '2022-05-04 05:17:20.000000', 'Cash on delivery', 'tid23243', 'processing'),
+('zikaiwen01@gmail.com', 1, 1, 300, 300, 'dhaka,bangladesh', 'faridpur', 'Alaska', 'United States', '185679099083', '2022-05-01 05:17:20', '2022-05-04 05:17:20.000000', 'Cash on delivery', 'tid23243', 'processing'),
+('zikaiwen01@gmail.com', 4, 1, 9000, 9000, 'dhaka,bangladesh', 'Alaska', 'faridpur', 'United States', '185679099083', '2022-05-01 06:16:15', '2022-05-04 06:16:15.000000', 'Cash on delivery', '', 'processing'),
+('zikaiwen01@gmail.com', 1, 4, 300, 1200, 'dhaka,bangladesh', 'Alaska', 'faridpur', 'United States', '185679099083', '2022-05-01 06:16:15', '2022-05-04 06:16:15.000000', 'Cash on delivery', '', 'processing'),
+('admin@gmail.com', 3, 1, 9000, 9000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('admin@gmail.com', 1, 1, 300, 300, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('rokon1@gmail.com', 1, 1, 300, 300, 'Jiangxi ', 'nanchang', 'nanchang', 'china', '234423454', '2022-05-01 20:01:58', '2022-05-04 20:01:58.000000', 'PayPal', 'te2343', 'processing'),
+('rokon1@gmail.com', 3, 1, 9000, 9000, 'Jiangxi ', 'nanchang', 'nanchang', 'china', '234423454', '2022-05-01 20:04:13', '2022-05-04 20:04:13.000000', 'Cash on delivery', '', 'processing'),
+('zikaiwen01@gmail.com', 1, 1, 300, 300, 'Jiangxi ', 'nanchang', 'nanchang', 'china', '234423454', '2022-05-01 20:10:29', '2022-05-04 20:10:29.000000', 'Cash on delivery', '45675675765675', 'bill');
 
 -- --------------------------------------------------------
 
@@ -80,21 +90,6 @@ INSERT INTO `products` (`id`, `p_name`, `p_category`, `price`, `active`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_inbox`
---
-
-CREATE TABLE `user_inbox` (
-  `id` int(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `subject` varchar(50) NOT NULL,
-  `body` varchar(1000) NOT NULL,
-  `date_time` date NOT NULL,
-  `from_email` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `user_info`
 --
 
@@ -116,7 +111,10 @@ CREATE TABLE `user_info` (
 --
 
 INSERT INTO `user_info` (`name`, `email`, `mobile_number`, `security_questions`, `answer`, `password`, `address`, `state`, `city`, `country`) VALUES
-('shakil', 'shakil@gmail.com', 568789798, 'what was your first car?', 'sgajuk', '12345', 'dhaka', 'bangladesh', 'faridpur', 'bangladesh');
+('Kevin', 'luokainwwn2@gmail.com', 234423454, 'what was your first car?', 'Mercerize Benz', 'Kevin12345', 'Jiangxi ', 'nanchang', 'nanchang', 'china'),
+('rokon', 'rokon1@gmail.com', 234423454, 'which school did you go?', 'zohra', '12345', 'Jiangxi ', 'nanchang', 'nanchang', 'china'),
+('md khalid hossain', 'zikaiwen01@gmail.com', 234423454, 'what is the name of your first pet?', 'shakil', '12345', 'Jiangxi ', 'nanchang', 'nanchang', 'china'),
+('Zohra', 'zohra@gmail.com', 234423454, 'what was your first car?', 'zohra', '12345', 'Jiangxi ', 'nanchang', 'nanchang', 'china');
 
 --
 -- Indexes for dumped tables
@@ -126,12 +124,6 @@ INSERT INTO `user_info` (`name`, `email`, `mobile_number`, `security_questions`,
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `user_inbox`
---
-ALTER TABLE `user_inbox`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -148,12 +140,6 @@ ALTER TABLE `user_info`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `user_inbox`
---
-ALTER TABLE `user_inbox`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
