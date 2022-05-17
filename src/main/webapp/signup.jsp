@@ -51,7 +51,7 @@
 			<%
 			}
 			%>
-			<h2>Online Shopping</h2>
+			<h2>YOURSHOP22 ONLINE SHOPPING</h2>
 			<p>The Online Shopping System is the application that allows the
 				users to shop online without going to the shops to buy them.</p>
 		</div>
