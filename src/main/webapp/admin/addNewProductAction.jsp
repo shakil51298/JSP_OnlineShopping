@@ -9,9 +9,10 @@ String pd_name = request.getParameter("pd_name");
 String pd_category = request.getParameter("pd_category");
 String pd_Price = request.getParameter("pd_Price");
 String active = request.getParameter("active");
+String img = "null";
 
 try {
-	String sql = " insert into products values(? , ? , ? , ? , ? )";
+	String sql = " insert into products values(? , ? , ? , ? , ?, ? )";
 	Connection con = SqlConnectionProvide.getcon();
 	PreparedStatement ps = con.prepareStatement(sql); // data send korar time e PreparedStatement use ;
 
@@ -20,6 +21,7 @@ try {
 	ps.setString(3, pd_category);
 	ps.setString(4, pd_Price);
 	ps.setString(5, active);
+	ps.setString(6, img);
 
 	ps.executeUpdate();
 	response.sendRedirect("addNewProduct.jsp?msg=done");

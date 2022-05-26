@@ -15,6 +15,7 @@ h3 {
 	color: yellow;
 	text-align: center;
 }
+
 </style>
 </head>
 <body>
@@ -55,7 +56,7 @@ h3 {
 	<table>
 		<thead>
 			<tr>
-				<th scope="col">ID</th>
+				<th scope="col">Image</th>
 				<th scope="col">Name</th>
 				<th scope="col">Category</th>
 				<th scope="col"><i class="fa fa-inr"></i> Price</th>
@@ -74,13 +75,30 @@ h3 {
 					String pName = rs.getString(2);
 					String pCategory = rs.getString(3);
 					int pPrice = rs.getInt(4);
+					String img = rs.getString(6);
 			%>
 			<tr>
-				<td><%out.print(id); %></td>
-				<td><%out.print(pName); %></td>
-				<td><%out.print(pCategory); %></td>
-				<td><%out.print(pPrice); %> <i class="fa fa-cny"> </i> </i></td>
-				<td><a href="addToCartAction.jsp?id=<%out.print(id); %>">Add to cart <i class='fas fa-cart-plus'></i></a></td>
+				<td><a href="<%out.print(img);%>" > <img style="width: 100%;" alt=""
+						src="<%out.print(img);%>">
+				</a></td>
+				<td>
+					<%
+					out.print(pName);
+					%>
+				</td>
+				<td>
+					<%
+					out.print(pCategory);
+					%>
+				</td>
+				<td>
+					<%
+					out.print(pPrice);
+					%> <i class="fa fa-cny"> </i> </i>
+				</td>
+				<td><a href="addToCartAction.jsp?id=<%out.print(id);%>">Add
+						to cart <i class='fas fa-cart-plus'></i>
+				</a></td>
 			</tr>
 
 			<%
