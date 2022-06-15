@@ -2,6 +2,7 @@
 <%@page import="java.io.PrintWriter"%>
 <html>
 <head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="css/signup-style.css">
 <title>Signup</title>
 </head>
@@ -52,10 +53,9 @@
 			}
 			%>
 			<h2>YOURSHOP22 ONLINE SHOPPING</h2>
-			<p>The Online Shopping System is the application that allows the
+			<p class="text-center ">The Online Shopping System is the application that allows the
 				users to shop online without going to the shops to buy them.</p>
 		</div>
 	</div>
-
 </body>
 </html>
