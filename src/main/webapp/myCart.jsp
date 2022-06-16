@@ -110,10 +110,10 @@ h3 {
 				<td><i class="fa fa-cny"></i><%=rs.getString(4) %></td>
 				<td>
 				<a href="incDscQuantityAction.jsp?id=<%=rs.getString(1) %>&quantity=inc"><i class='fas fa-plus-circle'></i></a> 
-					<%=rs.getString(8) %>
+					<%=rs.getString(9) %>
 				<a href="incDscQuantityAction.jsp?id=<%=rs.getString(1) %>&quantity=dec"><i class='fas fa-minus-circle'></i></a></td>
 				<td>
-				<i class="fa fa-cny"> <%=rs.getString(10) %></i>
+				<i class="fa fa-cny"> <%=rs.getString(11) %></i>
 				</td>
 				<td>
 				<a href="removeItemsFromCart.jsp?id=<%=rs.getString(1) %>">Remove <i class='fas fa-trash-alt'></i></a>
